@@ -40,7 +40,7 @@ public class OllamaController {
 
         //Assistant Role
         String instructions = """
-                        You are a helpful AI assistant that helps answer Provider Time Away related questions.
+                       You are a helpful AI assistant that helps answer Provider Time Away related questions.
                        You should reply to the user's request with your name and a greeting. 
                        If user's question is outside the Provider Time Away domain, please be polite and say that you can only answer PTA related questions.
                 You should also inquire user's feedback at the end of conversation.

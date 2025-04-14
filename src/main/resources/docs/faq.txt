@@ -1,0 +1,125 @@
+[
+    {
+        "category": "Adding days to a request",
+        "categoryDescription": "FAQs related to modifying or adding days to approved or submitted requests.",
+        "categoryOrder": 7,
+        "questions": [
+            {
+                "questionOrder": 1,
+                "question": "Can I add days to a request in Approved status?",
+                "answer": "Yes, you can add days to a request that has already been approved. A new request # will be created. Refer to 'How do I add more days to a request that has already been submitted?' in the FAQ.",
+                "tags": ["approved requests", "modify requests"],
+                "examples": [
+                    "How do I modify an approved request?",
+                    "Can I add days to my approved leave?",
+                    "What is the process for editing an approved request?"
+                ]
+            },
+            {
+                "questionOrder": 10,
+                "question": "How do I add more days to a request that has already been submitted?",
+                "answer": [
+                    "Important: Only requests created after 10 am on 8/23/2023 are eligible for this feature.",
+                    "Notes: Coverage Notes, Reason, and Instructions will match the original request. If they differ, please submit a new request.",
+                    "Process: Select 'Edit Request', click 'Add Days', choose the dates, and confirm."
+                ],
+                "tags": ["add days", "submitted requests"],
+                "examples": [
+                    "How can I add extra days to my request?",
+                    "What are the steps for adding days to an existing request?",
+                    "Can I edit a submitted request to include more days?"
+                ]
+            },
+            {
+                "questionOrder": 15,
+                "question": "What is the process for approving days added to a previously submitted request?",
+                "answer": [
+                    "For auto-approval, ensure the 'auto-approve' option is set to 'ON'.",
+                    "Manual approval is required if any 'gray out' dates or patient bookings exist in the EPIC template."
+                ],
+                "tags": ["approval process", "additional days"],
+                "examples": [
+                    "What conditions are required for auto-approval?",
+                    "Do added days get approved automatically?",
+                    "How does manual approval work for added days?"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Creating a request",
+        "categoryDescription": "FAQs about submitting and managing new time away requests.",
+        "categoryOrder": 5,
+        "questions": [
+            {
+                "questionOrder": 1,
+                "question": "How do I add non-consecutive days in a request?",
+                "answer": "There are two ways to add non-consecutive days: Option 1: Submit a new request for each day. Option 2: Use 'Repeat Weekly' and select non-consecutive days.",
+                "tags": ["non-consecutive days", "repeat weekly"],
+                "examples": [
+                    "How can I request non-consecutive days off?",
+                    "What is the process for submitting irregular days?",
+                    "Can I submit non-sequential days in a single request?"
+                ]
+            },
+            {
+                "questionOrder": 25,
+                "question": "What is Clinic Template Impact?",
+                "answer": [
+                    "Defines the actions for affected eStar templated slots and patients.",
+                    "Options include: 'Block Clinic Template', 'Freeze Clinic Template', or 'Leave Clinic Template Open'. Each affects schedules and patients differently."
+                ],
+                "tags": ["clinic template", "block templates"],
+                "examples": [
+                    "What happens when I block a clinic template?",
+                    "How does Clinic Template Impact affect schedules?",
+                    "What are the options for Clinic Template Impact?"
+                ]
+            },
+            {
+                "questionOrder": 26,
+                "question": "What Reason shows up in EPIC for each Time Away Reason?",
+                "answer": [
+                    "Convert to Telehealth -> EPIC Reason Code: 'Convert to Telehealth'.",
+                    "Sick -> EPIC Reason Code: 'Sick'.",
+                    "Vacation -> EPIC Reason Code: 'Vacation/Holiday'."
+                ],
+                "tags": ["reason codes", "EPIC reasons"],
+                "examples": [
+                    "What codes are used for time away reasons?",
+                    "How are reasons mapped to EPIC?",
+                    "What is the EPIC code for vacations?"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "EPIC Integration",
+        "categoryDescription": "FAQs about integrating and managing EPIC templates.",
+        "categoryOrder": 1,
+        "questions": [
+            {
+                "questionOrder": 1,
+                "question": "Can 'non-templated' or Overbook time be blocked?",
+                "answer": "The Time Away app cannot block time that is non-templated. Overbook slots must be manually removed in EPIC.",
+                "tags": ["non-templated time", "overbooked slots"],
+                "examples": [
+                    "Can I block non-templated slots in EPIC?",
+                    "Why can't I block overbook slots?",
+                    "How do I manage overbooked time in EPIC?"
+                ]
+            },
+            {
+                "questionOrder": 20,
+                "question": "What is the purpose of the Resync to EPIC icon in the View Requests page?",
+                "answer": "The Resync button retries adding 'On Hold' or 'Unavailable' to the EPIC template without resubmitting the request.",
+                "tags": ["resync EPIC", "EPIC template"],
+                "examples": [
+                    "How does the Resync feature work?",
+                    "What does the Resync button do?",
+                    "Can I use Resync for EPIC errors?"
+                ]
+            }
+        ]
+    }
+]

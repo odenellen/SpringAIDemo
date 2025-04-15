@@ -51,14 +51,14 @@ public class OllamaController {
 
     }
 
-    @GetMapping("/text/{text}")
-    public ResponseEntity<String> getAnswer(@PathVariable(value = "text") String text) {
+    @GetMapping("/question/{question}")
+    public ResponseEntity<String> getAnswer(@PathVariable(value = "question") String question) {
 
         Message systemMessage = new SystemPromptTemplate(systemText).createMessage();
         Message assistantMessage = new AssistantPromptTemplate(assistantText).createMessage();
 
         PromptTemplate promptTemplate = new PromptTemplate(this.promptTemplate);
-        Message promptMessage = promptTemplate.createMessage(Map.of("question", text, "context", faqContentResource));
+        Message promptMessage = promptTemplate.createMessage(Map.of("question", question, "context", faqContentResource));
 
         Prompt prompt = new Prompt(List.of(systemMessage, assistantMessage, promptMessage));
 

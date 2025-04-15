@@ -18,7 +18,7 @@ function App() {
   const models = [
     // { id: 'openai', name: 'OpenAI (GPT-4o)', color: '#2ECC71' },
     // { id: 'anthropic', name: 'Anthropic (Claude)', color: '#9B59B6' },
-    { id: 'ollama', name: 'Ollama (Gemma 2)', color: '#E67E22' }
+    { id: 'ollama', name: 'Ollama (Deepseek 7b)', color: '#E67E22' }
   ];
 
   const handlePromptChange = useCallback((value) => {
@@ -28,7 +28,7 @@ function App() {
   const fetchModelResponse = useCallback(async (model, prompt) => {
     try {
       const encodedPrompt = encodeURIComponent(prompt);
-      const response = await fetch(`http://localhost:8080/api/${model}/text/${encodedPrompt}`);
+      const response = await fetch(`http://localhost:8080/api/${model}/question/${encodedPrompt}`);
       
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
@@ -99,12 +99,12 @@ function App() {
   
   return (
     <div className="app-container">
-      <h1>Exploring Different LLM Models</h1>
+      <h1>Exploring LLM Models</h1>
       
       <div className="shared-prompt-container">
         <div className="shared-prompt-area">
           <textarea
-            placeholder="Enter a prompt to send to all models..."
+            placeholder="Enter a prompt to send..."
             value={sharedPrompt}
             onChange={(e) => handlePromptChange(e.target.value)}
             disabled={isLoading}
@@ -115,14 +115,14 @@ function App() {
             disabled={isLoading || !sharedPrompt.trim()}
             className="submit-all-btn"
           >
-            {isLoading ? 'Sending...' : 'Compare All Models'}
+            {isLoading ? 'Sending...' : 'Search'}
           </button>
         </div>
       </div>
       
       {responseOrder.length > 0 && (
-        <div className="response-order">
-          <h3>Response Order:</h3>
+        <div>
+          <h3>Response:</h3>
           <ol>
             {responseOrder.map((modelId, index) => {
               const model = models.find(m => m.id === modelId);
@@ -149,11 +149,11 @@ function App() {
           >
             <h2 style={{ color: model.color }}>
               {model.name}
-              {responseOrder.includes(model.id) && (
+              {/*{responseOrder.includes(model.id) && (
                 <span className="response-badge">
                   {responseOrder.indexOf(model.id) + 1}
                 </span>
-              )}
+              )}*/}
             </h2>
             
             <div className="response-area">

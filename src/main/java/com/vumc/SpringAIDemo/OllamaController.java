@@ -50,7 +50,7 @@ public class OllamaController {
               .build();
 
     }
-
+    @CrossOrigin
     @GetMapping("/question/{question}")
     public ResponseEntity<String> getAnswer(@PathVariable(value = "question") String question) {
 
@@ -68,13 +68,13 @@ public class OllamaController {
                 .call()
                 .chatResponse();
 
-        System.out.println(chatResponse.getMetadata().getUsage().getPromptTokens());
+        System.out.println(chatResponse.getMetadata().getUsage().toString());
 
         String response = chatResponse.getResult().getOutput().getText();
 
         return ResponseEntity.ok(response);
     }
-
+    @CrossOrigin
     @GetMapping("/status")
     public ResponseEntity<String> getStatus() {
         return ResponseEntity.ok("Ok");

@@ -18,7 +18,7 @@ function App() {
   const models = [
     // { id: 'openai', name: 'OpenAI (GPT-4o)', color: '#2ECC71' },
     // { id: 'anthropic', name: 'Anthropic (Claude)', color: '#9B59B6' },
-    { id: 'ollama', name: 'Ollama (Deepseek 7b)', color: '#E67E22' }
+    { id: 'ollama', name: 'Ollama', color: '#E67E22' }
   ];
 
   const handlePromptChange = useCallback((value) => {

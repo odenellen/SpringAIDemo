@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OllamaController {
 
     private final ChatClient chatClient;
+    private ChatResponse chatResponse;
 
     ChatOptions options;
 
@@ -62,15 +63,14 @@ public class OllamaController {
 
         Prompt prompt = new Prompt(List.of(systemMessage, assistantMessage, promptMessage));
 
-        ChatResponse chatResponse = chatClient
+        this.chatResponse = chatClient
                 .prompt(prompt)
                 .options(options)
                 .call()
                 .chatResponse();
 
-        System.out.println(chatResponse.getMetadata().getUsage().toString());
 
-        String response = chatResponse.getResult().getOutput().getText();
+        String response = this.chatResponse.getResult().getOutput().getText();
 
         return ResponseEntity.ok(response);
     }
@@ -78,5 +78,16 @@ public class OllamaController {
     @GetMapping("/status")
     public ResponseEntity<String> getStatus() {
         return ResponseEntity.ok("Ok");
+    }
+
+    @CrossOrigin
+    @GetMapping("/metadata")
+    public ResponseEntity getMetadata() {
+        if(this.chatResponse!=null){
+            return ResponseEntity.ok( this.chatResponse.getMetadata().getUsage().toString());
+        }
+        else {
+            return ResponseEntity.ok("Ok");
+        }
     }
 }
